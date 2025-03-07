@@ -1,0 +1,61 @@
+package com.f5.commit_or_die.model;
+
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+import jakarta.persistence.Table;
+
+@Entity
+@Table(name = "course_progress")
+public class CourseProgress {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
+    private String courseId;
+    private double progressPercentage;
+    private String user;
+
+    public CourseProgress() {
+    }
+
+    public CourseProgress(Long id, String courseId, double progressPercentage, String user) {
+        this.id = id;
+        this.courseId = courseId;
+        this.progressPercentage = progressPercentage;
+        this.user = user;
+    }
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public String getCourseId() {
+        return courseId;
+    }
+
+    public void setCourseId(String courseId) {
+        this.courseId = courseId;
+    }
+
+    public double getProgressPercentage() {
+        return progressPercentage;
+    }
+
+    public void setProgressPercentage(double progressPercentageId) {
+        this.progressPercentage = progressPercentageId;
+    }
+
+    public String getUser() {
+        return user;
+    }
+
+    public void setUser(String user) {
+        this.user = user;
+    }
+}
