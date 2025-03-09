@@ -1,6 +1,6 @@
 package com.f5.commit_or_die.model;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.*;
 
 import java.util.Date;
 
@@ -13,7 +13,7 @@ public class UserTest {
 
     @BeforeEach
     public void setUp() {
-        fixedDate = new Date(1633024800000L); 
+        fixedDate = new Date(1633024800000L);
         user = new User();
         user.setId(1L);
         user.setName("John Doe");
@@ -45,7 +45,6 @@ public class UserTest {
 
     @Test
     public void testGetRegistrationDate() {
-        // Comparamos los tiempos para evitar problemas con millisegundos
         assertEquals(fixedDate.getTime(), user.getRegistrationDate().getTime());
     }
 
@@ -90,4 +89,46 @@ public class UserTest {
         user.setRole("ADMIN");
         assertEquals("ADMIN", user.getRole());
     }
-}   
+
+    @Test
+    public void testParameterizedConstructorWithId() {
+        Date date = new Date(1633024800000L);
+        User userWithId = new User(100L, "Alice", "alice@example.com", "securepass", date, "USER");
+        assertEquals(100L, userWithId.getId());
+        assertEquals("Alice", userWithId.getName());
+        assertEquals("alice@example.com", userWithId.getEmail());
+        assertEquals("securepass", userWithId.getPassword());
+        assertEquals(date.getTime(), userWithId.getRegistrationDate().getTime());
+        assertEquals("USER", userWithId.getRole());
+    }
+
+    @Test
+    public void testParameterizedConstructorWithoutId() {
+        Date date = new Date(1633024800000L);
+        User userWithoutId = new User("Bob", "bob@example.com", "123456", date, "ADMIN");
+        assertNull(userWithoutId.getId());
+        assertEquals("Bob", userWithoutId.getName());
+        assertEquals("bob@example.com", userWithoutId.getEmail());
+        assertEquals("123456", userWithoutId.getPassword());
+        assertEquals(date.getTime(), userWithoutId.getRegistrationDate().getTime());
+        assertEquals("ADMIN", userWithoutId.getRole());
+    }
+
+    @Test
+    public void testOnCreateSetsRegistrationDateWhenNull() {
+        User userNoDate = new User();
+        userNoDate.setRegistrationDate(null);
+
+        userNoDate.onCreate();
+        assertNotNull(userNoDate.getRegistrationDate());
+    }
+
+    @Test
+    public void testOnCreateDoesNotOverrideExistingRegistrationDate() {
+        Date customDate = new Date(1633111200000L);
+        User userWithDate = new User();
+        userWithDate.setRegistrationDate(customDate);
+        userWithDate.onCreate();
+        assertEquals(customDate.getTime(), userWithDate.getRegistrationDate().getTime());
+    }
+}
