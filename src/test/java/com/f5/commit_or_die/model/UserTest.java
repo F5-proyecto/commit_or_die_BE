@@ -54,4 +54,40 @@ public class UserTest {
         assertEquals("USER", user.getRole());
     }
 
-}
+    @Test
+    public void testSetId() {
+        user.setId(2L);
+        assertEquals(2L, user.getId());
+    }
+
+    @Test
+    public void testSetName() {
+        user.setName("Jane Doe");
+        assertEquals("Jane Doe", user.getName());
+    }
+
+    @Test
+    public void testSetEmail() {
+        user.setEmail("jane@example.com");
+        assertEquals("jane@example.com", user.getEmail());
+    }
+
+    @Test
+    public void testSetPassword() {
+        user.setPassword("newpassword");
+        assertEquals("newpassword", user.getPassword());
+    }
+
+    @Test
+    public void testSetRegistrationDate() {
+        Date newDate = new Date(1633111200000L);
+        user.setRegistrationDate(newDate);
+        assertEquals(newDate.getTime(), user.getRegistrationDate().getTime());
+    }
+
+    @Test
+    public void testSetRole() {
+        user.setRole("ADMIN");
+        assertEquals("ADMIN", user.getRole());
+    }
+}   
