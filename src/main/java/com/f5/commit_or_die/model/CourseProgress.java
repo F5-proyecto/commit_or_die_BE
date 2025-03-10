@@ -12,12 +12,15 @@ public class CourseProgress {
     private String courseId;
     private double progressPercentage;
     private int completedLessonsCount;
-    private String user;
+
+    @ManyToOne
+    @JoinColumn(name = "user_id")
+    private User user;
 
     public CourseProgress() {
     }
 
-    public CourseProgress(Long id, String courseId, double progressPercentage, int completedLessonsCount, String user) {
+    public CourseProgress(Long id, String courseId, double progressPercentage, int completedLessonsCount, User user) {
         this.id = id;
         this.courseId = courseId;
         this.progressPercentage = progressPercentage;
@@ -57,11 +60,11 @@ public class CourseProgress {
         this.completedLessonsCount = completedLessonsCount;
     }
 
-    public String getUser() {
+    public User getUser() {
         return user;
     }
 
-    public void setUser(String user) {
+    public void setUser(User user) {
         this.user = user;
     }
 }
