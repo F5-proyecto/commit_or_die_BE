@@ -10,7 +10,9 @@ public class CourseProgressTest {
 
     @BeforeEach
     public void setUp() {
-        courseProgress = new CourseProgress(1L, "course123", 75.0, 10, "user1");
+        User user = new User();
+        user.setId(1L);
+        courseProgress = new CourseProgress(1L, "course123", 75.0, 10, user);
     }
 
     @Test
@@ -74,7 +76,9 @@ public class CourseProgressTest {
 
     @Test
     public void testSetUser() {
-        courseProgress.setUser("user2");
-        assertEquals("user2", courseProgress.getUser());
+        User user2 = new User();
+        user2.setId(2L);
+        courseProgress.setUser(user2);
+        assertEquals(user2, courseProgress.getUser());
     }
 }
