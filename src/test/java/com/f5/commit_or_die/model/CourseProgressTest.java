@@ -14,7 +14,7 @@ public class CourseProgressTest {
     }
 
     @Test
-    public void tesEmptytConstructor() {
+    public void testEmptytConstructor() {
         CourseProgress emptyProgress = new CourseProgress();
         assertEquals(null, emptyProgress.getId());
         assertEquals(null, emptyProgress.getCourseId());
