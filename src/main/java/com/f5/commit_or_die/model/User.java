@@ -1,6 +1,6 @@
 package com.f5.commit_or_die.model;
 
-import javax.persistence.*;
+import jakarta.persistence.*;
 import java.util.Date;
 
 @Entity

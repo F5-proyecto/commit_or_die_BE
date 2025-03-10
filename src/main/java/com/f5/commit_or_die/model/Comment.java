@@ -34,6 +34,8 @@ public class Comment {
         this.user = user;
     }
 
+    // Getters and Setters
+
     public Long getId() {
         return id;
     }
@@ -80,7 +82,5 @@ public class Comment {
 
     public void setUser(User user) {
         this.user = user;
-    }   
-
-
+    }
 }
