@@ -10,7 +10,7 @@ public class CourseProgressTest {
 
     @BeforeEach
     public void setUp() {
-        courseProgress = new CourseProgress(1L, "course123", 75.0, "user1");
+        courseProgress = new CourseProgress(1L, "course123", 75.0, 10, "user1");
     }
 
     @Test
@@ -26,6 +26,11 @@ public class CourseProgressTest {
     @Test
     public void testGetProgressPercentage() {
         assertEquals(75.0, courseProgress.getProgressPercentage(), 0.01);
+    }
+
+    @Test
+    public void testGetCompletedLessonsCount() {
+        assertEquals(10, courseProgress.getCompletedLessonsCount());
     }
 
     @Test
@@ -49,6 +54,12 @@ public class CourseProgressTest {
     public void testSetProgressPercentage() {
         courseProgress.setProgressPercentage(80.0);
         assertEquals(80.0, courseProgress.getProgressPercentage(), 0.01);
+    }
+
+    @Test
+    public void testSetCompletedLessonsCount() {
+        courseProgress.setCompletedLessonsCount(15);
+        assertEquals(15, courseProgress.getCompletedLessonsCount());
     }
 
     @Test

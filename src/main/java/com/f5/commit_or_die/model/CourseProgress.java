@@ -15,15 +15,17 @@ public class CourseProgress {
     private Long id;
     private String courseId;
     private double progressPercentage;
+    private int completedLessonsCount;
     private String user;
 
     public CourseProgress() {
     }
 
-    public CourseProgress(Long id, String courseId, double progressPercentage, String user) {
+    public CourseProgress(Long id, String courseId, double progressPercentage, int completedLessonsCount, String user) {
         this.id = id;
         this.courseId = courseId;
         this.progressPercentage = progressPercentage;
+        this.completedLessonsCount = completedLessonsCount;
         this.user = user;
     }
 
@@ -49,6 +51,14 @@ public class CourseProgress {
 
     public void setProgressPercentage(double progressPercentageId) {
         this.progressPercentage = progressPercentageId;
+    }
+
+    public int getCompletedLessonsCount() {
+        return completedLessonsCount;
+    }
+
+    public void setCompletedLessonsCount(int completedLessonsCount) {
+        this.completedLessonsCount = completedLessonsCount;
     }
 
     public String getUser() {
