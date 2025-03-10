@@ -14,6 +14,16 @@ public class CourseProgressTest {
     }
 
     @Test
+    public void tesEmptytConstructor() {
+        CourseProgress emptyProgress = new CourseProgress();
+        assertEquals(null, emptyProgress.getId());
+        assertEquals(null, emptyProgress.getCourseId());
+        assertEquals(0.0, emptyProgress.getProgressPercentage(), 0.01);
+        assertEquals(0, emptyProgress.getCompletedLessonsCount());
+        assertEquals(null, emptyProgress.getUser());
+    }
+
+    @Test
     public void testGetId() {
         assertEquals(1L, courseProgress.getId());
     }
