@@ -36,7 +36,7 @@ public class CommentController {
         return commentService.createComment(comment);
     }
 
-    @PutMapping("comments")
+    @PutMapping("/comments")
     public void updateComment( @RequestBody Comment comment) {
         commentService.updateComment(comment);
     }
