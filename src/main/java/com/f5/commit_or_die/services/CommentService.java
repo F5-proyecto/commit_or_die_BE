@@ -16,7 +16,7 @@ public class CommentService {
         this.commentRepository = commentRepository;
     }
 
-    public List<Comment> getComments() {
+    public List<Comment> getComments(String resourceId) {
         return commentRepository.findAll();
     }
 
