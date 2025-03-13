@@ -2,6 +2,7 @@ package com.f5.commit_or_die.model;
 
 import jakarta.persistence.*;
 import java.util.Date;
+import jakarta.validation.constraints.*;
 
 @Entity
 @Table(name = "users")
@@ -11,8 +12,17 @@ public class User {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
+    @NotBlank(message = "Name is required")
+    @Size (max = 100, min = 3)
     private String name;
+
+    @Email(message = "Invalid email")
+    @NotBlank(message = "Email is required")
+    @Column(unique = true)
     private String email;
+
+    @NotBlank(message = "Password is required")
+    @Size(min = 8, max = 100)
     private String password;
 
     @Temporal(TemporalType.TIMESTAMP)

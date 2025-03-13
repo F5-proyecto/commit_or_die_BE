@@ -1,5 +1,7 @@
 package com.f5.commit_or_die.model;
 
+import com.fasterxml.jackson.annotation.JsonIdentityReference;
+
 import jakarta.persistence.*;
 
 @Entity
@@ -15,6 +17,7 @@ public class CourseProgress {
 
     @ManyToOne
     @JoinColumn(name = "user_id")
+    @JsonIdentityReference(alwaysAsId = true)
     private User user;
 
     public CourseProgress() {
