@@ -1,4 +1,4 @@
-package com.f5.commit_or_die;
+package com.f5.commit_or_die.dto;
 
 public class AuthRequest {
     private String email;
