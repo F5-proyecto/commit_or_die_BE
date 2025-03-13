@@ -14,12 +14,16 @@ public class CourseProgressService {
         this.courseProgressRepository = courseProgressRepository;
     }
 
+    public CourseProgress createProgress(CourseProgress courseProgress) {
+        return courseProgressRepository.save(courseProgress);
+    }
+
     public CourseProgress updateProgress(CourseProgress courseProgress) {
         return courseProgressRepository.save(courseProgress);
     }
 
     public CourseProgress getProgressByUserIdAndCourseId(Long userId, String courseId) {
 
-        return courseProgressRepository.findByUserIdAndCourseId(userId, courseId);
+        return courseProgressRepository.findByUser_IdAndCourseId(userId, courseId);
     }
 }

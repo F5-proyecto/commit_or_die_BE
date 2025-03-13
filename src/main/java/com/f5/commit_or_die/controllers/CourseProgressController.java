@@ -6,11 +6,13 @@ import org.springframework.web.bind.annotation.RestController;
 import com.f5.commit_or_die.model.CourseProgress;
 import com.f5.commit_or_die.services.CourseProgressService;
 
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
 
 @RestController
 @RequestMapping("/course-progress")
@@ -20,6 +22,12 @@ public class CourseProgressController {
 
     public CourseProgressController(CourseProgressService courseProgressService) {
         this.courseProgressService = courseProgressService;
+    }
+
+    @PostMapping("/create")
+    public ResponseEntity<CourseProgress> createProgress(@RequestBody CourseProgress courseProgress) {
+        CourseProgress createdProgress = courseProgressService.createProgress(courseProgress);
+        return ResponseEntity.status(HttpStatus.CREATED).body(createdProgress);
     }
 
     @PutMapping("/update")
