@@ -6,5 +6,5 @@ import com.f5.commit_or_die.model.CourseProgress;
 
 @Repository
 public interface CourseProgressRepository extends JpaRepository<CourseProgress, Long> {
-    CourseProgress findByUserIdAndCourseId(Long userId, String courseId);
+    CourseProgress findByUser_IdAndCourseId(Long userId, String courseId);
 }
