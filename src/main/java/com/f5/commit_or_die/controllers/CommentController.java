@@ -1,48 +1,64 @@
 package com.f5.commit_or_die.controllers;
 
 import java.util.List;
+import java.util.stream.Collectors;
 
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.*;
 
+import com.f5.commit_or_die.dto.CommentResponse;
 import com.f5.commit_or_die.model.Comment;
 import com.f5.commit_or_die.services.CommentService;
 
-import org.springframework.web.bind.annotation.DeleteMapping;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.PutMapping;
-
-
-
+import jakarta.validation.Valid;
 
 @RestController
+@RequestMapping("/comments")
 public class CommentController {
 
-    private CommentService commentService;
+    private final CommentService commentService;
 
     public CommentController(CommentService commentService) {
         this.commentService = commentService;
     }
 
-    @GetMapping("/comments/{resourceId}")
-    public List<Comment> getComments(@PathVariable String resourceId) {
-        return commentService.getComments(resourceId);
+    @GetMapping("/{resourceId}")
+    public ResponseEntity<List<CommentResponse>> getComments(@PathVariable String resourceId) {
+        List<Comment> comments = commentService.getComments(resourceId);
+        List<CommentResponse> response = comments.stream()
+                .map(this::mapToCommentResponse)
+                .collect(Collectors.toList());
+        return ResponseEntity.ok(response);
     }
 
-    @PostMapping("/comments")
-    public Comment createComment(@RequestBody Comment comment) {
-        return commentService.createComment(comment);
+    @PostMapping
+    public ResponseEntity<CommentResponse> createComment(@RequestBody Comment comment) {
+        Comment createdComment = commentService.createComment(comment);
+        CommentResponse response = mapToCommentResponse(createdComment);
+        return ResponseEntity.status(HttpStatus.CREATED).body(response);
     }
 
-    @PutMapping("/comments")
-    public void updateComment( @RequestBody Comment comment) {
-        commentService.updateComment(comment);
+    @PutMapping
+    public ResponseEntity<CommentResponse> updateComment(@Valid @RequestBody Comment comment) {
+        Comment updatedComment = commentService.updateComment(comment);
+        CommentResponse response = mapToCommentResponse(updatedComment);
+        return ResponseEntity.ok(response);
     }
 
-    @DeleteMapping("/comments/{id}")
-    public void deleteComment(@PathVariable Long id) {
+    @DeleteMapping("/{id}")
+    public ResponseEntity<Void> deleteComment(@PathVariable Long id) {
         commentService.deleteComment(id);
+        return ResponseEntity.noContent().build();
+    }
+
+    private CommentResponse mapToCommentResponse(Comment comment) {
+        CommentResponse dto = new CommentResponse();
+        dto.setId(comment.getId());
+        dto.setContent(comment.getContent());
+        dto.setResourceId(comment.getResourceId());
+        dto.setRating(comment.getRating());
+        dto.setUserId(comment.getUser().getId());
+        return dto;
     }
 }

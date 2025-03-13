@@ -3,6 +3,7 @@ package com.f5.commit_or_die.model;
 import com.fasterxml.jackson.annotation.JsonIdentityReference;
 
 import jakarta.persistence.*;
+import jakarta.validation.constraints.NotNull;
 
 @Entity
 @Table(name = "course_progress")
@@ -11,7 +12,10 @@ public class CourseProgress {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+
+    @NotNull(message = "El ID del curso es obligatorio")
     private String courseId;
+
     private double progressPercentage;
     private int completedLessonsCount;
 
