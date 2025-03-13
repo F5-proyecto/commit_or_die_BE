@@ -23,7 +23,7 @@ public class CourseProgressController {
     }
 
     @PutMapping("/update")
-    public ResponseEntity<CourseProgress> uptadteProgress(@RequestBody CourseProgress courseProgress) {
+    public ResponseEntity<CourseProgress> updateProgress(@RequestBody CourseProgress courseProgress) {
         CourseProgress updatedProgress = courseProgressService.updateProgress(courseProgress);
         return ResponseEntity.ok(updatedProgress);
     }
