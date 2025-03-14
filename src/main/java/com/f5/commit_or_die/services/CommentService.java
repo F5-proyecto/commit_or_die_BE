@@ -17,15 +17,15 @@ public class CommentService {
     }
 
     public List<Comment> getComments(String resourceId) {
-        return commentRepository.findAll();
+        return commentRepository.findByResourceId(resourceId);
     }
 
     public Comment createComment(Comment comment) {
         return commentRepository.save(comment);
     }
 
-    public void updateComment(Comment comment) {
-        commentRepository.save(comment);
+    public Comment updateComment(Comment comment) {
+         return commentRepository.save(comment);
     }
 
     public void deleteComment(Long id) {

@@ -1,38 +1,29 @@
-package com.f5.commit_or_die.model;
+package com.f5.commit_or_die.dto;
 
-import com.fasterxml.jackson.annotation.JsonIdentityReference;
-
-import jakarta.persistence.*;
 import jakarta.validation.constraints.NotNull;
 
-@Entity
-@Table(name = "course_progress")
-public class CourseProgress {
-
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+public class CourseProgressResponse {
     private Long id;
 
-    @NotNull(message = "Course ID is required")
+    @NotNull(message = "El ID del curso es obligatorio")
     private String courseId;
 
     private double progressPercentage;
     private int completedLessonsCount;
 
-    @ManyToOne
-    @JoinColumn(name = "user_id")
-    @JsonIdentityReference(alwaysAsId = true)
-    private User user;
+    @NotNull(message = "El ID del usuario es obligatorio")
+    private Long userId;
 
-    public CourseProgress() {
+    public CourseProgressResponse() {
     }
 
-    public CourseProgress(Long id, String courseId, double progressPercentage, int completedLessonsCount, User user) {
+    public CourseProgressResponse(Long id, String courseId, double progressPercentage, int completedLessonsCount,
+            Long userId) {
         this.id = id;
         this.courseId = courseId;
         this.progressPercentage = progressPercentage;
         this.completedLessonsCount = completedLessonsCount;
-        this.user = user;
+        this.userId = userId;
     }
 
     public Long getId() {
@@ -55,8 +46,8 @@ public class CourseProgress {
         return progressPercentage;
     }
 
-    public void setProgressPercentage(double progressPercentageId) {
-        this.progressPercentage = progressPercentageId;
+    public void setProgressPercentage(double progressPercentage) {
+        this.progressPercentage = progressPercentage;
     }
 
     public int getCompletedLessonsCount() {
@@ -67,11 +58,11 @@ public class CourseProgress {
         this.completedLessonsCount = completedLessonsCount;
     }
 
-    public User getUser() {
-        return user;
+    public Long getUserId() {
+        return userId;
     }
 
-    public void setUser(User user) {
-        this.user = user;
+    public void setUserId(Long userId) {
+        this.userId = userId;
     }
 }

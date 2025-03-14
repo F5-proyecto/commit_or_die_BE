@@ -1,6 +1,9 @@
 package com.f5.commit_or_die.model;
 
 import java.util.Date;
+
+import jakarta.validation.constraints.NotEmpty;
+
 import jakarta.persistence.*;
 
 @Entity
@@ -17,6 +20,8 @@ public class Comment {
     private Date publicationDate;
     
     private Integer rating;
+
+    @NotEmpty(message = "The course identifier is required")
     private String resourceId;
      
     @ManyToOne
