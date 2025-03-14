@@ -18,10 +18,10 @@ We have developed a centralized web platform that functions as a repository for 
 🍃 &nbsp; Spring Boot 3.4.3
 
 ## Our Team
-- [José Romero]()
-- [Yeferson Gaviria]()
-- [Emma Lanza]()
-- [Celia Garrido]()
+- [José Romero](https://github.com/JoseRD149)
+- [Yeferson Gaviria](https://github.com/YefGav)
+- [Emma Lanza](https://github.com/emmalanza)
+- [Celia Garrido](https://github.com/celiagarridoherrera)
 - [Karina Lorenzo](https://github.com/karinalorenzo)
 
 ## Required documentation 
