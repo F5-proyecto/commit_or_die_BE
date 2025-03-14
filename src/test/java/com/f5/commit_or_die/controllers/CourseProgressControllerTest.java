@@ -2,25 +2,22 @@ package com.f5.commit_or_die.controllers;
 
 import static org.mockito.Mockito.when;
 import static org.mockito.Mockito.any;
-import static org.mockito.Mockito.eq;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.put;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.jsonPath;
+
 import com.f5.commit_or_die.model.CourseProgress;
 import com.f5.commit_or_die.model.User;
 import com.f5.commit_or_die.services.CourseProgressService;
-import org.junit.jupiter.api.BeforeEach;
+
 import org.junit.jupiter.api.Test;
-import org.mockito.InjectMocks;
-import org.mockito.MockitoAnnotations;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest;
 import org.springframework.boot.test.mock.mockito.MockBean;
 import org.springframework.http.MediaType;
 import org.springframework.test.web.servlet.MockMvc;
-import org.springframework.test.web.servlet.setup.MockMvcBuilders;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
 @WebMvcTest(CourseProgressController.class)
@@ -33,17 +30,8 @@ public class CourseProgressControllerTest {
     @MockBean
     private CourseProgressService courseProgressService;
 
-    @InjectMocks
-    private CourseProgressController courseProgressController;
-
+    @Autowired
     private ObjectMapper objectMapper;
-
-    @BeforeEach
-    public void setUp() {
-        MockitoAnnotations.openMocks(this);
-        mockMvc = MockMvcBuilders.standaloneSetup(courseProgressController).build();
-        objectMapper = new ObjectMapper();
-    }
 
     @Test
     public void testCreateProgress() throws Exception {
@@ -62,7 +50,7 @@ public class CourseProgressControllerTest {
                 .andExpect(jsonPath("$.courseId").value("course123"))
                 .andExpect(jsonPath("$.progressPercentage").value(50.0))
                 .andExpect(jsonPath("$.completedLessonsCount").value(5))
-                .andExpect(jsonPath("$.user.id").value(1L));
+                .andExpect(jsonPath("$.userId").value(1L));
     }
 
     @Test
@@ -82,7 +70,7 @@ public class CourseProgressControllerTest {
                 .andExpect(jsonPath("$.courseId").value("course123"))
                 .andExpect(jsonPath("$.progressPercentage").value(75.0))
                 .andExpect(jsonPath("$.completedLessonsCount").value(10))
-                .andExpect(jsonPath("$.user.id").value(1L));
+                .andExpect(jsonPath("$.userId").value(1L));
     }
 
     @Test
@@ -93,7 +81,7 @@ public class CourseProgressControllerTest {
         courseProgress.setCompletedLessonsCount(20);
         courseProgress.setUser(new User(1L, "username", null, null, null, null));
 
-        when(courseProgressService.getProgressByUserIdAndCourseId(eq(1L), eq("course123"))).thenReturn(courseProgress);
+        when(courseProgressService.getProgressByUserIdAndCourseId(1L, "course123")).thenReturn(courseProgress);
 
         mockMvc.perform(get("/course-progress/1/course123")
                 .contentType(MediaType.APPLICATION_JSON))
@@ -101,12 +89,12 @@ public class CourseProgressControllerTest {
                 .andExpect(jsonPath("$.courseId").value("course123"))
                 .andExpect(jsonPath("$.progressPercentage").value(100.0))
                 .andExpect(jsonPath("$.completedLessonsCount").value(20))
-                .andExpect(jsonPath("$.user.id").value(1L));
+                .andExpect(jsonPath("$.userId").value(1L));
     }
 
     @Test
     public void testGetProgressNotFound() throws Exception {
-        when(courseProgressService.getProgressByUserIdAndCourseId(eq(1L), eq("course123"))).thenReturn(null);
+        when(courseProgressService.getProgressByUserIdAndCourseId(1L, "course123")).thenReturn(null);
 
         mockMvc.perform(get("/course-progress/1/course123")
                 .contentType(MediaType.APPLICATION_JSON))
