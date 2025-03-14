@@ -1,6 +1,7 @@
 package com.f5.commit_or_die.model;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertNotNull;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -47,7 +48,9 @@ public class CourseProgressTest {
 
     @Test
     public void testGetUser() {
-        assertEquals("user1", courseProgress.getUser());
+        User user = courseProgress.getUser();
+        assertNotNull(user);
+        assertEquals(1L, user.getId());
     }
 
     @Test
