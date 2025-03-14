@@ -21,7 +21,7 @@ public class Comment {
     
     private Integer rating;
 
-    @NotEmpty(message = "El identificador del curso es obligatorio")
+    @NotEmpty(message = "The course identifier is required")
     private String resourceId;
      
     @ManyToOne

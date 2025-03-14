@@ -13,7 +13,7 @@ public class CourseProgress {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @NotNull(message = "El ID del curso es obligatorio")
+    @NotNull(message = "Course ID is required")
     private String courseId;
 
     private double progressPercentage;
