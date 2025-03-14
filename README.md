@@ -10,11 +10,12 @@ We have developed a centralized web platform that functions as a repository for 
 ## Status: DONE 🚀
 
 ## Requeriments
-- Java Development Kit (JDK) 21
-- Maven (for build management)
-- JUnit (for testing)
-- Mockito (for testing)
-- Spring Boot 3.4.3
+
+♨️ &nbsp; Java Development Kit (JDK) 21\
+🌱 &nbsp; Maven (for build management)\
+🧪 &nbsp; JUnit (for testing)\
+🍸 &nbsp; Mockito (for testing)\
+🍃 &nbsp; Spring Boot 3.4.3
 
 ## Our Team
 - [José Romero]()
