@@ -68,25 +68,10 @@ If you'd like to contribute to this project, please fork the repository and subm
 
 Follow the next steps if you want contribute:
 
-1. Make a fork
+1. Clone this project
 2. Create a new branch to yor changes (git checkout -b feature/name-branch)
 3. Submit a pull request explaining your modifications
 4. Enjoy the experience 🚀
 
-### Install the project dependencies
-
-```bash
-  npm install
-```
-### Run the server
-
-```bash
-  npm run dev
-```
 ## License
 This project is open-source, and you are free to use, modify, and distribute it.
-
-## Result
-![download](https://github.com/user-attachments/assets/31479048-75a2-40b0-860e-e681b937af6d)
-
-
