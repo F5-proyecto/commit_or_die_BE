@@ -1,55 +1,50 @@
 
-# Hi Everyone! We're the DoReMi-Devs team! 🎹 🎶
+# Hi Everyone! We're the _Commit or Die_ team!
 
 ## This project is an interactive plataform to waken your musical creativity, play, record and share your melodies with the world. Get started now and get the music flowwing!
 
 ## Status: DONE 🚀
 
 ## Requeriments
-Make sure you have React and Node.js installed
+Java Development Kit (JDK) 21
+Maven (for build management)
+JUnit (for testing)
+Mockito (for testing)
+Spring Boot 3.4.3
 
 ## Our Team
-- [Alberto García](https://github.com/algama17)
-- [Jesús Enjamio](https://github.com/JesusEnjamio)
-- [Alejandra Fernández](https://github.com/Akalchi)
-- [Eva Muñoz](https://github.com/Emagmunioz)
-- [Ayelén Marcos](https://github.com/Ayuik)
+- [José Romero]()
+- [Yeferson Gaviria]()
+- [Emma Lanza]()
+- [Celia Garrido]()
 - [Karina Lorenzo](https://github.com/karinalorenzo)
 
 ## Required documentation 
-- [![Organization](https://img.shields.io/badge/-Jira-0052CC?logo=jira&logoColor=white&style=flat)](https://karinalrg16.atlassian.net/jira/software/projects/SCRUM/boards/1)
-![Jira](https://github.com/user-attachments/assets/20078dc5-8c36-44fb-b28c-8e89b1050de5)
+- [![Organization](https://img.shields.io/badge/-Jira-0052CC?logo=jira&logoColor=white&style=flat)](https://celiagarridoherrera.atlassian.net/jira/software/projects/ER/boards/69/backlog)
+<img width="776" alt="Jira-commit-or-die" src="https://github.com/user-attachments/assets/ed5088bf-640a-4237-a7e5-17a5bdd4e8fb" />
 
-- [![Figma](https://img.shields.io/badge/-Figma-F24E1E?logo=figma&logoColor=white&style=flat)](https://www.figma.com/design/veBM9Qlo7Bwnze7VxLvW2j/Proyectos?node-id=0-1&p=f&t=RxaSIoVc8AEtak0n-0)\
-![Figma](https://github.com/user-attachments/assets/79542899-89c0-46c1-8531-be2fc3e27ae1)
+- [![Draw.io](https://img.shields.io/badge/-Draw.io-F08705?style=flat&logo=diagrams.net&logoColor=white)](https://app.diagrams.net/#G1pk-rtkBjcKgtQTSk6EnqR6mC9dIvcC8y#%7B%22pageId%22%3A%22NV7bwFAeGkHGlJ7_Agzc%22%7D)
+![UML commit-or-die](https://github.com/user-attachments/assets/ff6dd48d-5778-4c01-a6e1-52fbe7533bb1)
 
-- [![Userflows](https://img.shields.io/badge/-Lucidchart-5B5D5D?logo=lucidchart&logoColor=white&style=flat)](https://app.diagrams.net/#G198oBy4hNvh0jnQZ5eFoBtZ8W9AQj-Dp5#%7B%22pageId%22%3A%22gOuFC4SUz20mN5y9nW_Y%22%7D)\
-![userflow](https://github.com/user-attachments/assets/40c42610-d966-4281-98f2-49eca8f0de7d)
-  
-- [![Userstories](https://img.shields.io/badge/-Lucidchart-5B5D5D?logo=lucidchart&logoColor=white&style=flat)](https://app.diagrams.net/#G198oBy4hNvh0jnQZ5eFoBtZ8W9AQj-Dp5#%7B%22pageId%22%3A%22gOuFC4SUz20mN5y9nW_Y%22%7D)\
-![userstories](https://github.com/user-attachments/assets/96030213-e14e-485c-a163-b859ac002ff7)
-
-- [![Userstories](https://img.shields.io/badge/-Lucidchart-5B5D5D?logo=lucidchart&logoColor=white&style=flat)](https://app.diagrams.net/#G198oBy4hNvh0jnQZ5eFoBtZ8W9AQj-Dp5#%7B%22pageId%22%3A%22gOuFC4SUz20mN5y9nW_Y%22%7D)\
-![UML](https://github.com/user-attachments/assets/a9680159-15dd-4d71-a6dc-e6b9284e559e)
+[![Confluence](https://img.shields.io/badge/-Confluence-172B4D?style=flat&logo=confluence&logoColor=white)](https://celiagarridoherrera.atlassian.net/wiki/spaces/EQ/overview?homepageId=29032714)\
+<img width="754" alt="Confluence" src="https://github.com/user-attachments/assets/dd52830f-dd8f-44b2-b09f-6dd890154b9e" />
 
 ## &nbsp;Tech Stack
 ### Development
-![Node.js](https://img.shields.io/badge/-Node.js-339933?logo=node.js&logoColor=white&style=flat)
 ![Visual Studio Code](https://img.shields.io/badge/-Visual_Studio_Code-007ACC?logo=visual-studio-code&logoColor=white&style=flat)
 ![GitHub](https://img.shields.io/badge/-GitHub-181717?logo=github&logoColor=white&style=flat)
 ![Git](https://img.shields.io/badge/-Git-F05032?logo=git&logoColor=white&style=flat) 
-
-### Libraries
-![React](https://img.shields.io/badge/-React-61DAFB?logo=react&logoColor=black&style=flat)
-
-### Frameworks
-![Tailwind CSS](https://img.shields.io/badge/-Tailwind%20CSS-06B6D4?logo=tailwindcss&logoColor=white&style=flat)  
-
+![Maven](https://img.shields.io/badge/-Maven-C71A36?logo=apache-maven&logoColor=white&style=flat)
+![Java](https://img.shields.io/badge/-Java-007396?logo=java&logoColor=white&style=flat)
+![Spring Boot](https://img.shields.io/badge/-Spring%20Boot-6DB33F?style=flat&logo=springboot&logoColor=white)
+![JUnit](https://img.shields.io/badge/-JUnit-25A162?style=flat&logo=junit5&logoColor=white)
+![Mockito](https://img.shields.io/badge/-Mockito-48C9B0?style=flat&logo=java&logoColor=white)
+  
  ### Documentation:
-![Figma](https://img.shields.io/badge/-Figma-F24E1E?logo=figma&logoColor=white&style=flat)
-![Lucidchart](https://img.shields.io/badge/-Lucidchart-5B5D5D?logo=lucidchart&logoColor=white&style=flat)
+![Draw.io](https://img.shields.io/badge/-Draw.io-F08705?style=flat&logo=diagrams.net&logoColor=white)
 ![Canva](https://img.shields.io/badge/-Canva-00C4CC?logo=canva&logoColor=white&style=flat)
 ![Jira](https://img.shields.io/badge/-Jira-0052CC?logo=jira&logoColor=white&style=flat)
+![Confluence](https://img.shields.io/badge/-Confluence-172B4D?style=flat&logo=confluence&logoColor=white)
 
  ### Comunication
 ![Discord](https://img.shields.io/badge/-Discord-5865F2?logo=discord&logoColor=white&style=flat)
