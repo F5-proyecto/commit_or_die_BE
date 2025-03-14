@@ -1,16 +1,20 @@
 
 # Hi Everyone! We're the _Commit or Die_ team!
 
-## This project is an interactive plataform to waken your musical creativity, play, record and share your melodies with the world. Get started now and get the music flowwing!
+## Project Description
+We have developed a centralized web platform that functions as a repository for educational resources. This platform will allow students to access tutorials, documentation, code samples, and useful links on key technologies such as:
+- Frontend: HTML, CSS, JavaScript, and React.
+- Backend: Java with Spring Boot.
+- Testing: JUnit and Hamcrest to ensure code quality.
 
 ## Status: DONE 🚀
 
 ## Requeriments
-Java Development Kit (JDK) 21
-Maven (for build management)
-JUnit (for testing)
-Mockito (for testing)
-Spring Boot 3.4.3
+- Java Development Kit (JDK) 21
+- Maven (for build management)
+- JUnit (for testing)
+- Mockito (for testing)
+- Spring Boot 3.4.3
 
 ## Our Team
 - [José Romero]()
