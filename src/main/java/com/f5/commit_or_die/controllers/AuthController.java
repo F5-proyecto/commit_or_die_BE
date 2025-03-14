@@ -1,5 +1,8 @@
 package com.f5.commit_or_die.controllers;
 
+import java.util.HashMap;
+import java.util.Map;
+
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -23,12 +26,15 @@ public class AuthController {
     }
 
     @PostMapping("/login")
-    public ResponseEntity<String> login(@RequestBody AuthRequest authRequest) {
+    public ResponseEntity<Map<String, String>> login(@RequestBody AuthRequest authRequest) {
         boolean isAuthenticated = authService.login(authRequest.getEmail(), authRequest.getPassword());
+       Map<String, String> response = new HashMap<>();
         if (isAuthenticated) {
-            return ResponseEntity.ok("Login successful");
+            response.put("message", "Login successful");
+            return ResponseEntity.ok(response);
         } else {
-            return ResponseEntity.status(HttpStatus.UNAUTHORIZED).body("Invalid credentials");
+            response.put("message", "Invalid credentials");
+            return ResponseEntity.status(HttpStatus.UNAUTHORIZED).body(response);
         }
     }
 
