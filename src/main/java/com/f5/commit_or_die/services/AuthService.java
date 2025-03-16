@@ -21,6 +21,14 @@ public class AuthService {
         return false;
     }
 
+    public User loginAndGetUser(String email, String password) {
+        User user = userRepository.findByEmail(email);
+        if (user != null && user.getPassword().equals(password)) {
+            return user;
+        }
+        return null;
+    }
+
     public User register(User user) {
         return userRepository.save(user);
     }
