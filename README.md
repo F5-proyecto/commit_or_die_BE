@@ -25,8 +25,9 @@ We have developed a centralized web platform that functions as a repository for 
 - [Karina Lorenzo](https://github.com/karinalorenzo)
 
 ## Required documentation 
-- [![Organization](https://img.shields.io/badge/-Jira-0052CC?logo=jira&logoColor=white&style=flat)](https://celiagarridoherrera.atlassian.net/jira/software/projects/ER/boards/69/backlog)
-<img width="776" alt="Jira-commit-or-die" src="https://github.com/user-attachments/assets/ed5088bf-640a-4237-a7e5-17a5bdd4e8fb" />
+- [![Jira](https://img.shields.io/badge/-Jira-0052CC?logo=jira&logoColor=white&style=flat)](https://celiagarridoherrera.atlassian.net/jira/software/projects/ER/boards/69/backlog)
+![Jira](https://github.com/user-attachments/assets/d4ce933a-f295-48c0-900a-86c75da5c6ee)
+
 
 - [![Draw.io](https://img.shields.io/badge/-Draw.io-F08705?style=flat&logo=diagrams.net&logoColor=white)](https://app.diagrams.net/#G1pk-rtkBjcKgtQTSk6EnqR6mC9dIvcC8y#%7B%22pageId%22%3A%22NV7bwFAeGkHGlJ7_Agzc%22%7D)
 ![UML commit-or-die](https://github.com/user-attachments/assets/ff6dd48d-5778-4c01-a6e1-52fbe7533bb1)
